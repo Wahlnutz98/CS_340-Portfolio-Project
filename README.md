@@ -10,7 +10,7 @@
 
 ## Project Overview:
 - This project implements a transactional database for a made up business called 'Robo Retail'. The program creates a transactional database that accurately and efficiently handles CRUD operations while ensuring no data anomalies arise during usage.
-- The build is accompanied by a frontend client side GUI created with ejs. The backend database is hosted on Oregon State University's flip servers via MySQL.
+- The build is accompanied by a frontend client side interface created with ejs and express. The backend database is hosted on Oregon State University's flip servers via MySQL.
 - DDL.SQL: This file creates the entity tables that will be filled with customer information. It includes an intersection table and several primary / foreign key handling functions. This file also fills the tables with sample data to display an example of our database design usage and implementation. 
 - DML.SQL: Aims to connect relevant tables with each other and ensure proper handling on the frontend user interface.
 - PL.SQL: This file stores all the CRUD procedures for all tables (Except OrderDetails).
