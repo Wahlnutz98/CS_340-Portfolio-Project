@@ -1,0 +1,113 @@
+<!-- 
+Citation for the following file: products.ejs
+Date: 05/25/26 - 06/07/26
+AI Tool: ChatGPT
+Prompt summary: ChatGPT was used to help connect the products front end with the database side to dynamically populate the table. 
+ChatGPT was also used to debug and assist with code syntax.
+All AI generated code was verified and tested by all team members to ensure accuracy and match our database design.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Products</h1>
+
+    <form action="/restore-database" method="POST">
+        <a href="index.html">Back to Home</a>
+        <button type="submit">Reset database</button>
+    </form>
+
+    <h2>Browse Products</h2>
+    <!-- views/products.ejs -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Quantity in Stock</th>
+            </tr>
+        </thead>
+        <tbody> <!--dynamically load the data in table using ejs template-->
+            <% Products.forEach(function(product) { %>
+                <tr>
+                    <td><%= product.productID %></td>
+                    <td><%= product.productName %></td>
+                    <td><%= product.category %></td>
+                    <td><%= product.price %></td>
+                    <td><%= product.quantityInStock %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <h2>Add Product</h2>
+    <form method="POST" action="/add-product">
+        <label>Product Name:</label>
+        <input type="text" name="productName""><br><br>
+
+        <label>Category:</label>
+        <input type="text" name="productCategory"><br><br>
+
+        <label>Price:</label>
+        <input type="number" step="0.01" name="productPrice"><br><br>
+
+        <label>Quantity In Stock:</label>
+        <input type="number" name="quantityInStock"><br><br>
+
+        <button type="submit">Add Product</button>
+    </form>
+
+    <h2>Update Product</h2>
+    <form method="post" action="update-product">
+        <label>Select Product:</label>
+        <select name="productToUpdateID">
+             <% Products.forEach(function(product) { %>
+                <option>
+                    <%= product.productID %>
+                    -
+                    <%= product.productName %>
+                </option>
+            <% }); %>
+        </select><br><br>
+
+        <label>Updated Name:</label>
+        <input type="text" name="updatedProductName"><br><br>
+
+        <label>Updated Category:</label>
+        <input type="text" name="updatedProductCategory"><br><br>
+
+        <label>Updated Price:</label>
+        <input type="number" step="0.01" name="updatedProductPrice"><br><br>
+
+        <label>Updated Qty:</label>
+        <input type="number" step="1" name="updatedProductQty"><br><br>
+
+        <button type="submit">Update Product</button>
+    </form>
+
+    <h2>Delete Product</h2>
+    <form method="post" action="delete-product">
+        <label>Select product:</label>
+        <select name="productToDeleteID">
+            <% Products.forEach(function(product) { %>
+                <option>
+                    <%= product.productID %>
+                    -
+                    <%= product.productName %>
+                </option>
+            <% }); %>
+        </select><br><br>
+        
+        <button type="submit">Delete Product</button>
+    </form>
+    
+
+</body>
+</html>

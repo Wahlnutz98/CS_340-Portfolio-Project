@@ -1,0 +1,104 @@
+/* style.css 
+Code Citation: ChatGPT & W3 schools
+Date: 06/03/2026
+Usage: Tools and methods to style certain objects in the webpage.
+Prompt summary: How do I style a [Webpage element] to [look a certain way]?
+Source URL: https://www.w3schools.com/css/
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7e7e7;
+    margin: 20px;
+}
+
+/* Aligns index page title to left side */
+.left-title {
+    text-align: left;
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+}
+
+h2 {
+    color: #34495e;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th {
+    background-color: #082131;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+form {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #082131;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+a {
+    display: inline-block;
+    background-color: #082131;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+ul {
+    padding: 5px;
+}
+
+li {
+    padding: 10px;
+    margin: 5px;
+}
+
+li a {
+    color:#f1f1f1;
+    background-color: #082131
+}
+
+li a:hover{
+    color: #03141f;
+}
+
+td {
+    text-align:  center;
+}

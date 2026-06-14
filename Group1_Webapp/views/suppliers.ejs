@@ -1,0 +1,110 @@
+<!-- 
+Citation for the following file: suppliers.ejs
+Date: 05/25/26 - 06/07/26
+AI Tool: ChatGPT
+Prompt summary: ChatGPT was used to assist with connection of the frontend to our backend database to ensure proper updating and display of suppliers table data.
+ChatGPT was also used to Debug.
+All AI generated code was verified and tested by all team members to ensure accuracy and match our database design.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Suppliers</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Suppliers</h1>
+
+    <form action="/restore-database" method="POST">
+        <a href="index.html">Back to Home</a>
+        <button type="submit">Reset database</button>
+    </form>
+
+    <h2>Browse Suppliers</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Supplier ID</th>
+                <th>Supplier Name</th>
+                <th>Contact Email</th>
+                <th>Phone #</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody> <!--dynamically load the data in table using ejs template-->
+            <% Suppliers.forEach(function(supplier) { %>
+                <tr>
+                    <td><%= supplier.supplierID %></td>
+                    <td><%= supplier.supplierName %></td>
+                    <td><%= supplier.contactEmail %></td>
+                    <td><%= supplier.phoneNumber %></td>
+                    <td><%= supplier.supplierAddress %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <h2>Add Supplier</h2>
+    <form method="post" action="/add-supplier">
+        <label>Supplier Name:</label>
+        <input type="text" name="supplierName"><br><br>
+
+        <label>Contact Email:</label>
+        <input type="email" name="supplierEmail"><br><br>
+
+        <label>Phone Number:</label>
+        <input type="text" name="supplierPhone"><br><br>
+
+        <label>Supplier Address:</label>
+        <input type="text" name="supplierAddress"><br><br>
+
+        <button type="submit">Add Supplier</button>
+    </form>
+
+    <h2>Update Supplier</h2>
+    <form method="post" action="update-supplier">
+        <label>Select Supplier:</label>
+        <select name="supplierToUpdateID">
+            <% Suppliers.forEach(function(supplier) { %>
+                <option>
+                    <%= supplier.supplierID %>
+                    -
+                    <%= supplier.supplierName %>
+                </option>
+            <% }); %>
+        </select><br><br>
+
+        <label>Updated Supplier Name:</label>
+        <input type="text" name="updatedSupplierName"><br><br>
+
+        <label>Updated Contact Email:</label>
+        <input type="email" name="updatedSupplierEmail"><br><br>
+
+        <label>Updated Phone Number:</label>
+        <input type="tel" name="updatedSupplierPhone"><br><br>
+
+        <label>Updated Supplier Address:</label>
+        <input type="text" name="updatedSupplierAddress"><br><br>
+
+        <button type="submit">Update Supplier</button>
+    </form>
+
+    <h2>Delete Supplier</h2>
+    <form method="post" action="delete-supplier">
+        <label>Select Supplier:</label>
+        <select name="supplierToDeleteID">
+            <% Suppliers.forEach(function(supplier) { %>
+                <option>
+                    <%= supplier.supplierID %>
+                    -
+                    <%= supplier.supplierName %>
+                </option>
+            <% }); %>
+        </select><br><br>
+
+        <button type="submit">Delete Supplier</button>
+    </form>
+</body>
+</html>

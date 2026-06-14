@@ -1,0 +1,107 @@
+<!-- 
+Citation for the following file: orders.ejs
+Date: 05/25/26 - 06/07/26
+AI Tool: ChatGPT
+Prompt summary: ChatGPT was used to assist and understand how to populate the tables on the orders page from the connection with our database.
+ChatGPT was also used to help debug.
+All AI generated code was verified and tested by all team members to ensure accuracy and match our database design.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Orders</h1>
+
+    <form action="/restore-database" method="POST">
+        <a href="index.html">Back to Home</a>
+        <button type="submit">Reset database</button>
+    </form>
+
+    <h2>Browse Orders</h2>
+    <!-- views/orders.ejs -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer ID</th>
+                <th>Customer First Name</th>
+                <th>Customer Last Name</th>
+                <th>Order Date</th>
+            </tr>
+        </thead>
+        <tbody> <!--dynamically load the data in table using ejs template-->
+            <% Orders.forEach(function(order) { %>
+                <tr>
+                    <td><%= order.orderID %></td>
+                    <td><%= order.customerID %></td>
+                    <td><%= order.firstName %></td>
+                    <td><%= order.lastName %></td>
+                    <td><%= order.orderDate %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <h2>Add Order</h2>
+    <form method="POST" action="/add-order">
+        <label>Customer:</label>
+        <select name="customerIDFromOrders">
+            <% Orders.forEach(function(order) { %>
+                <option>
+                    <%= order.customerID %>
+                    -
+                    <%= order.firstName %>
+                </option>
+            <% }); %>
+        </select><br><br>
+
+        <label>Order Date:</label>
+        <input type="datetime-local" name="orderDate"><br><br>
+
+        <button type="submit">Add Order</button>
+    </form>
+
+    <h2>Update Order</h2>
+    <form method="post" action="update-order">
+        <label>Select Order:</label>
+        <select name="orderToUpdateID">
+            <% Orders.forEach(function(order) { %>
+                <option>
+                    <%= order.orderID %>
+                    -
+                    <%= order.firstName %>
+                    <%= order.lastName %>
+                </option>
+            <% }); %>
+        </select><br><br>
+
+        <label>Updated Order date:</label>
+        <input type="datetime-local" name="orderUpdatedDate"><br><br>
+
+        <button type="submit">Update Order</button>
+    </form>
+
+    <h2>Delete Order</h2>
+    <form method="POST" action="/delete-order">
+        <label>Select Order:</label>
+        <select name="orderToDeleteID">
+            <% Orders.forEach(function(order) { %>
+                <option>
+                    <%= order.orderID %>
+                    -
+                    <%= order.firstName %>
+                    <%= order.lastName %>
+                </option>
+            <% }); %>
+        </select><br><br>
+
+        <button type="submit">Delete Order</button>
+    </form>
+    
+</body>
+</html>

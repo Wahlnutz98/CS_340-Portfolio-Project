@@ -1,0 +1,53 @@
+<!-- 
+Citation for the following file: orderDetails.ejs
+Date: 05/25/26 - 06/07/26
+AI Tool: ChatGPT
+Prompt summary: ChatGPT was used to help dynamically populate the orderDetails table via the connection to our database. 
+ChatGPT was also used to help debug and address issues when the table was incorrectly populated.
+All AI generated code was verified and tested by all team members to ensure accuracy and match our database design.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Order Details</h1>
+
+    <form action="/restore-database" method="POST">
+        <a href="index.html">Back to Home</a>
+        <button type="submit">Reset database</button>
+    </form>
+
+    <h2>Browse Order Details</h2>
+    <!-- views/orderDetails.ejs -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Order Detail ID</th>
+                <th>Order ID</th>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Line Total</th>
+            </tr>
+        </thead>
+        <tbody> <!--dynamically load the data in table using ejs template-->
+            <% OrderDetails.forEach(function(orderDetail) { %>
+                <tr>
+                    <td><%= orderDetail.orderDetailID %></td>
+                    <td><%= orderDetail.orderID %></td>
+                    <td><%= orderDetail.productID %></td>
+                    <td><%= orderDetail.productName %></td>
+                    <td><%= orderDetail.quantity %></td>
+                    <td><%= orderDetail.lineTotal %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    </body>
+</html>
