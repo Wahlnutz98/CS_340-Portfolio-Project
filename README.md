@@ -1,5 +1,6 @@
-## Robo Retail Transactional Database
+![Demo](Demo_CS340_Portfolio_Project_GIF.gif)
 
+## Robo Retail Transactional Database
 
 ## Database and TechStack:
 - MySQL
