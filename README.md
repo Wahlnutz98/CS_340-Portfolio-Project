@@ -8,11 +8,20 @@
 
 
 ## Project Overview:
-- This project implements a transactional database for a made up business called 'Robo Retail'.
+- This project implements a transactional database for a made up business called 'Robo Retail'. The program creates a transactional database that accurately and efficenetly handles CRUD operations while ensuring no data anamolies arise during usage.
+- The build is accompined by a frontend client side GUI created with ejs. The backend database is hosted on Oregon State University's flip severs via MySQL.
+
+- DDL.SQL: This file creates the entity tables that will be filled with customer information. It includes an intersection table and several primary / foriegn key handling functions. This file also fills the tables with sample data to display an example of our database design usage and implementation. 
+- DML.SQL: Aims to connect relevant tables with eachother and ensure proper handling on the frontend user interface.
+- PL.SQL: This file stores all the CRUD procedures for all tables (Except OrderDetails).
+- Group1_Webapp: Holds all the frontend code. This includes the DB connector that has the credentials to log into MySQL to populate data (currently santized), views folder which contains each EJS file for each table and the style sheet.
+- Group1_Project Step 5 PDF: Contains our finalized written proposal of the database desgin, our debugging / revision processes decsions along with entity-relationship desgin, and schema. 
+
+
 - This work done here represents the collective effort of Hossian Nahid, Kevin Sun, and Jacob Wahl. This project took place over 11 weeks in OSU's CS_340 taught by Dr. Michael Curry.
 - The goal of the course is to teach the fundamentals of database design, SQL, and connecting it all with web development.
 -
-- Note to the team: Thanks for all the hard work, could not have asked for better teammates!
+- Note to the team: Thanks for all the hard work!
 
 
 ## Citations:
