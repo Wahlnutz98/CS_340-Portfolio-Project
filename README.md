@@ -8,14 +8,14 @@
 
 
 ## Project Overview:
-- This project implements a transactional database for a made up business called 'Robo Retail'. The program creates a transactional database that accurately and efficenetly handles CRUD operations while ensuring no data anamolies arise during usage.
-- The build is accompined by a frontend client side GUI created with ejs. The backend database is hosted on Oregon State University's flip severs via MySQL.
+- This project implements a transactional database for a made up business called 'Robo Retail'. The program creates a transactional database that accurately and efficiently handles CRUD operations while ensuring no data anomalies arise during usage.
+- The build is accompanied by a frontend client side GUI created with ejs. The backend database is hosted on Oregon State University's flip servers via MySQL.
 
-- DDL.SQL: This file creates the entity tables that will be filled with customer information. It includes an intersection table and several primary / foriegn key handling functions. This file also fills the tables with sample data to display an example of our database design usage and implementation. 
-- DML.SQL: Aims to connect relevant tables with eachother and ensure proper handling on the frontend user interface.
+- DDL.SQL: This file creates the entity tables that will be filled with customer information. It includes an intersection table and several primary / foreign key handling functions. This file also fills the tables with sample data to display an example of our database design usage and implementation. 
+- DML.SQL: Aims to connect relevant tables with each other and ensure proper handling on the frontend user interface.
 - PL.SQL: This file stores all the CRUD procedures for all tables (Except OrderDetails).
-- Group1_Webapp: Holds all the frontend code. This includes the DB connector that has the credentials to log into MySQL to populate data (currently santized), views folder which contains each EJS file for each table and the style sheet.
-- Group1_Project Step 5 PDF: Contains our finalized written proposal of the database desgin, our debugging / revision processes decsions along with entity-relationship desgin, and schema. 
+- Group1_Webapp: Holds all the frontend code. This includes the DB connector that has the credentials to log into MySQL to populate data (currently sanitized), views folder which contains each EJS file for each table and the style sheet.
+- Group1_Project Step 5 PDF: Contains our finalized written proposal of the database design, our debugging / revision processes decisions along with entity-relationship design, and schema. 
 
 
 - This work done here represents the collective effort of Hossian Nahid, Kevin Sun, and Jacob Wahl. This project took place over 11 weeks in OSU's CS_340 taught by Dr. Michael Curry.
@@ -39,3 +39,5 @@
  - W3 schools SQL: https://www.w3schools.com/sql/default.asp
  - W3 Schools CSS: https://www.w3schools.com/css/
  - Canvas: https://canvas.oregonstate.edu/courses/2042369/assignments/10464646?module_item_id=26640125
+
+
