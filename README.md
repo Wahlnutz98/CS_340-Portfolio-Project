@@ -1,5 +1,5 @@
 ## Robo Retail Transactional Database
-
+- All CRUD functionalities are also updating the database (Customers only shown for demo GIF length)
 ![Demo](Demo_CS340_Portfolio_Project_GIF.gif)
 
 ## Database and TechStack:
@@ -20,7 +20,6 @@
 
 - This work done here represents the collective effort of Hossian Nahid, Kevin Sun, and Jacob Wahl. This project took place over 11 weeks in OSU's CS_340 taught by Dr. Michael Curry.
 - The goal of the course is to teach the fundamentals of database design, SQL, and connecting it all with web development.
--
 - Note to the team: Thanks for all the hard work!
 
 
