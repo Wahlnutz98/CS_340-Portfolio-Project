@@ -1,5 +1,5 @@
 ## Robo Retail Transactional Database
-- * All CRUD functionalities updating the database (Customers only shown for demo GIF length) *
+- All CRUD functionalities updating the database (Customers only shown for demo GIF length)
 ![Demo](Demo_CS340_Portfolio_Project_GIF.gif)
 
 ## Database and TechStack:
